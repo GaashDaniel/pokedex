@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #333;
+}
+
+.pokedex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.pokedex .header-image {
+  height: 189px;
+}
+.pokedex .search-row {
+  display: flex;
+  align-self: stretch;
+  gap: 0.5rem;
+}
+.pokedex .search-row .search-input {
+  flex-grow: 1;
+  border-radius: 1rem;
+  border-start-end-radius: 0.5rem;
+  border-end-end-radius: 0.5rem;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 2;
+  padding-inline: 1ch;
+}
+.pokedex .search-row button {
+  width: 8rem;
+  font-weight: 700;
+  background-color: #ff1c1c;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  border-start-start-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+  cursor: pointer;
+}
+.pokedex[data-filter=show-all] .show-all {
+  display: none;
+}
+.pokedex[data-filter=show-favorites] .show-favorites {
+  display: none;
+}
+.pokedex[data-filter=show-favorites] .pokemon-card:not(.favorite) {
+  display: none;
+}
+.pokedex .catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 12rem);
+  gap: 1rem;
+}
+.pokedex .catalog .pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #555;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.pokedex .catalog .pokemon-card .toggle-favorite {
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+  scale: 0.75;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+.pokedex .catalog .pokemon-card .toggle-favorite img {
+  height: 1em;
+  width: 1em;
+}
+.pokedex .catalog .pokemon-card:not(.favorite) .toggle-favorite img {
+  filter: grayscale(1);
+}
+.pokedex .catalog .pokemon-card .pokemon-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: stretch;
+  height: 2lh;
+  padding-inline: 2ch;
+  font-family: tahoma;
+  font-weight: 900;
+  background-color: #999;
+  color: #ffcb04;
+  -webkit-text-stroke: 0.06em #3567b1;
+}
+.pokedex .catalog .pokemon-card .pokemon-image {
+  height: 96px;
+  margin-block: 1.5rem;
+}
+.pokedex .catalog .pokemon-card .pokemon-id {
+  font-family: monospace;
+  opacity: 0.4;
+  color: white;
+  padding: 0.5rem;
+  align-self: start;
+}/*# sourceMappingURL=styles.css.map */
