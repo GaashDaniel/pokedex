@@ -113,7 +113,8 @@ body {
                 font-weight: 900;
                 background-color: #999;
                 color: #ffcb04;
-                -webkit-text-stroke: 0.06em #3567b1;
+                -webkit-text-stroke: 0.25em #3567b1;
+                paint-order: stroke fill;
             }
 
             .pokemon-image {

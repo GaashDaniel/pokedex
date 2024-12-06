@@ -46,7 +46,7 @@ function createCard(pokemon) {
         };
     };
     const pokeball = document.createElement('img');
-    pokeball.src = '/images/pokeball.svg';
+    pokeball.src = 'images/pokeball.svg';
     favButton.appendChild(pokeball);
     card.appendChild(favButton);
     return card;
