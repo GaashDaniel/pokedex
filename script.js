@@ -47,6 +47,7 @@ function createCard(pokemon) {
     };
     const pokeball = document.createElement('img');
     pokeball.src = 'images/pokeball.svg';
+    pokeball.title = 'Add / Remove Favorite';
     favButton.appendChild(pokeball);
     card.appendChild(favButton);
     return card;
@@ -67,9 +68,10 @@ showAll.onclick = function () {
 };
 
 searchInput.oninput = function () {
+    const query = searchInput.value.toLowerCase();
     for (const pokemon of pokemons) {
         const pokemonCard = pokedex.querySelector(`[data-pokemon-id="${pokemon.id}"]`);
-        const match = pokemon.name.includes(searchInput.value) || pokemon.id == searchInput.value;
+        const match = pokemon.name.includes(query) || pokemon.id == +query;
         pokemonCard.style.display = match ? '' : 'none';
     };
 };

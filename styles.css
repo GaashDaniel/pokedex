@@ -15,11 +15,14 @@ body {
 .pokedex {
   display: flex;
   flex-direction: column;
+  width: 90vw;
+  max-width: 38rem;
   align-items: center;
   gap: 1rem;
 }
 .pokedex .header-image {
-  height: 189px;
+  width: 501px;
+  max-width: 100%;
 }
 .pokedex .search-row {
   display: flex;
@@ -28,6 +31,7 @@ body {
 }
 .pokedex .search-row .search-input {
   flex-grow: 1;
+  width: 100%;
   border-radius: 1rem;
   border-start-end-radius: 0.5rem;
   border-end-end-radius: 0.5rem;
@@ -37,7 +41,8 @@ body {
   padding-inline: 1ch;
 }
 .pokedex .search-row button {
-  width: 8rem;
+  width: 6rem;
+  flex-shrink: 0;
   font-weight: 700;
   background-color: #ff1c1c;
   color: white;
@@ -58,8 +63,9 @@ body {
 }
 .pokedex .catalog {
   display: grid;
-  grid-template-columns: repeat(3, 12rem);
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   gap: 1rem;
+  align-self: stretch;
 }
 .pokedex .catalog .pokemon-card {
   display: flex;
